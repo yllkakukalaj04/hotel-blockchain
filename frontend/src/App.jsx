@@ -37,10 +37,27 @@ const Stars = ({ n }) => (
   </span>
 )
 
-const Chip = ({ children }) => (
-  <span className="text-xs bg-brand-soft text-brand px-2 py-1 rounded-full">{children}</span>
-)
+const ICONS = {
+  WiFi: '📶',
+  Mëngjes: '🍳',
+  Parking: '🅿️',
+  Spa: '💆',
+  Restorant: '🍽️',
+  Terrasë: '🌇',
+  Kuzhinë: '👨‍🍳',
+  Oxhak: '🔥',
+  Sallë: '🏛️',
+  Pishinë: '🏊',
+  Fitnes: '🏋️',
+  Bar: '🍸',
+  Klimë: '❄️',
+}
 
+const Chip = ({ children }) => (
+  <span className="text-xs bg-brand-soft text-brand px-2 py-1 rounded-full">
+    {ICONS[children] || '✔️'} {children}
+  </span>
+)
 function ThemeMenu() {
   const [open, setOpen] = useState(false)
   const [theme, setTheme] = useState(() => {
