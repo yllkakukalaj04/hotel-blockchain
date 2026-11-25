@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-2: var(--brand-2);
+  --color-brand-soft: var(--brand-soft);
+}
+
+:root,
+[data-theme="light"] {
+  --page: #f3f4f6; --card: #ffffff; --ink: #111827; --muted: #6b7280; --line: #e5e7eb;
+  --brand: #1d4ed8; --brand-hover: #1e40af; --brand-2: #4f46e5; --brand-soft: #eff6ff;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0f172a; --card: #1e293b; --ink: #f1f5f9; --muted: #94a3b8; --line: #334155;
+  --brand: #3b82f6; --brand-hover: #2563eb; --brand-2: #6366f1; --brand-soft: #1e3a5f;
+}
+[data-theme="ocean"] {
+  --page: #e0f2fe; --card: #ffffff; --ink: #0c4a6e; --muted: #4b7a96; --line: #bae6fd;
+  --brand: #0369a1; --brand-hover: #075985; --brand-2: #0891b2; --brand-soft: #e0f2fe;
+}
+[data-theme="forest"] {
+  --page: #ecfdf5; --card: #ffffff; --ink: #064e3b; --muted: #4b7a6a; --line: #bbf7d0;
+  --brand: #047857; --brand-hover: #065f46; --brand-2: #0d9488; --brand-soft: #d1fae5;
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s;
+}
